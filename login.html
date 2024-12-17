@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/i-stylesheet.css">
+    <link rel="stylesheet" href="css/sign-stylesheet.css">
+</head>
+
+<body class="style-body">
+    <div id="navbar-logo">
+        <a href="images/logox.png">
+            <img class="logo-image" src="images/logox.png" alt="Logo"></a>
+    </div>
+    <div class=" box login-theme">
+        <div class="text-box">
+            <label>Login</label>
+        </div>
+        <!-- <form action="login.php" method="post"> -->
+        <form action="index.html" method="post">
+            <br><br>
+            <div>
+                <input class="entry-box" type='text' id='username' name='username' placeholder='Username' required>
+            </div>
+            </br>
+            <div>
+                <input class="entry-box" type='password' id='Password' name='Password' placeholder='Password' required>
+                <br>
+                <button type="button" onclick="togglePasswordVisibility()">show/hide password</button>
+            </div>
+            </br>
+            <button type="submit " class="submit-box">
+                    <p>
+                            Login
+                    </p>
+        </button>
+            <br>
+            <br>
+            <div style="font-size: 25px;" class="for-password-box">
+                <p>
+                    <a href="forgot-password.html">
+                  Forgot Password
+                </a>
+                </p>
+            </div>
+            <hr>
+        </form>
+        <!-- <span style="font-size: 25px;"><p><a href="index.html">Login</a>
+        </p></span> -->
+    </div>
+    </section>
+
+    <section>
+        <script>
+            var passwordInput = document.getElementById("Password");
+
+            // Toggle Password Visibility on and off
+            function togglePasswordVisibility() {
+                const password = document.getElementById("Password");
+                if (password.type === "password") {
+                    password.type = "text";
+                } else {
+                    password.type = "password";
+                }
+            }
+        </script>
+    </section>
+</body>
+
+</html>

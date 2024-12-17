@@ -1,0 +1,46 @@
+.lil-pics {
+    width: 250px;
+    height: 250px;
+    border: 3px solid rgba(221, 20, 184, 0.575);
+    margin-top: 10px;
+    margin-left: 45px;
+    border-radius: 23px;
+    color: #fff;
+    font-size: 25px;
+    transition: box-shadow;
+}
+.lil-pics:hover{
+    box-shadow: 0 0 10px 10px rgba(196, 201, 206, 0.945);
+}
+
+.lil-pics-container {
+    width: 350px;
+    height: 450px;
+    border: 3px solid black;
+    margin-top: 50px;
+    margin-left: 10px;
+    border-radius: 20px;
+    color: white;
+    font-size: 25px;
+    background-color: black;
+    text-align: left;
+}
+
+.act-pics {
+    width: 1500px;
+    height: 1500px;
+    border: 3px solid rgba(221, 20, 184, 0.575);
+    margin-top: 50px;
+    margin-left: 15px;
+    border-radius: 23px;
+    color: #fff;
+    font-size: 25px;
+}
+
+.food-theme {
+    background-color: black;
+    /* background-image: url("../images/temporal\ folder/eatleries.jpg"); */
+    background-image: url("../images/menu.jpeg");
+    background-position: 500px 200px;
+    height: fit-content;
+}

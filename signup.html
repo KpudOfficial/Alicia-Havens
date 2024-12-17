@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="css/i-stylesheet.css">
+    <link rel="stylesheet" href="css/sign-stylesheet.css">
+
+    <script src="javascript/command.js"></script>
+
+</head>
+
+<body class=" box-theme ">
+
+    <section>
+        <div id="navbar-logo">
+            <a href="images/logox.png">
+                <img class="logo-image" src="images/logox.png" alt="Logo" />
+            </a>
+        </div>
+        <div class="box">
+            <div class="text-box">
+                <label>Sign Up</label>
+            </div>
+            <form action="save_data.php" method="post" name="form" onsubmit="return validateForm()">
+                <div>
+                    <input class="entry-box" type='text' id='name' name='username' placeholder='Username' required>
+                </div>
+                <br>
+                <div>
+                    <input class="entry-box" type='text' id='email' name='Email' placeholder='Email' required>
+                </div>
+                <br>
+                <div>
+                    <input class="entry-box" type='password' id='password' name='password' placeholder='Password' required>
+                    <br>
+                    <button type="button" onclick="togglePasswordVisibility()">show/hide password</button>
+                </div>
+
+
+                <div>
+                    <input class="entry-box" type='password' id='repassword' name='repassword' placeholder='Confirm password' required>
+                </div>
+
+                <button type="submit" class="submit-box">submit</button>
+            </form>
+            <div class="text-box">
+                <p>Already have an account?</p>
+            </div>
+            <span style="font-size: 25px;"><p><a href="login.html">Login</a>
+            </p></span>
+        </div>
+    </section>
+
+    <script>
+        var passwordInput = document.getElementById("password");
+        var rePasswordInput = document.getElementById("repassword");
+        var emailInput = document.getElementById("email");
+
+        function validateForm() {
+            var password = passwordInput.value;
+            var confirmPassword = rePasswordInput.value;
+            var email = emailInput.value;
+
+            if (password === confirmPassword && password.length > 5 && isStrongPassword(password) && isValidEmail(email)) {
+                // Save the form data using an AJAX request or any other method you prefer
+                saveFormData();
+
+                // Redirect to index.html
+                window.location.href = "index.html";
+
+                // Return false to prevent the default form submission
+                return false;
+            } else {
+                if (password !== confirmPassword) {
+                    alert("Make sure password matches confirm password");
+                } else if (password.length <= 5) {
+                    alert("Password should be at least 6 characters long");
+                } else if (!isStrongPassword(password)) {
+                    alert("Password should contain at least one uppercase letter, one lowercase letter, one digit, and one special character");
+                } else if (!isValidEmail(email)) {
+                    alert("Please enter a valid email address");
+                }
+                return false;
+            }
+        }
+
+        function saveFormData() {
+            // Retrieve the form data
+            var username = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+
+            // Prepare the data to be saved
+            var formData = {
+                username: username,
+                email: email
+            };
+
+            // Send an AJAX request to save the form data
+            // You can use libraries like jQuery or fetch API for this
+            // Example using fetch API:
+            fetch("save_data.php", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(formData)
+                })
+                .then(function(response) {
+                    // Handle the response as needed
+                })
+                .catch(function(error) {
+                    // Handle any errors that occur during the request
+                });
+        }
+    </script>
+
+</body>
+
+</html>

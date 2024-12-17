@@ -1,0 +1,33 @@
+.quote-size {
+    height: 300px;
+    width: 480px;
+    background-color: rgb(31, 84, 105);
+    border: 3px solid purple;
+    border-radius: 23px;
+    margin-left: 50px;
+    margin-top: 10px;
+    padding: 50px 50px;
+    color: black;
+    position: relative;
+}
+
+.quote-size-container {
+    height: 350px;
+    width: 500px;
+    background-color: transparent;
+    background-image: url("../images/photo_u.jpeg");
+    background-position: 120px -500px;
+    border: 3px solid purple;
+    border-radius: 23px;
+    margin-left: 10px;
+    margin-top: 0px;
+    padding-top: 50px;
+    padding-left: 40px;
+    color: rgb(12, 116, 34);
+}
+
+.quotes-body {
+    /* background-image: url("../images/photo_u.jpeg"); */
+    background-position: 120px -500px;
+    background-repeat: repeat-y;
+}
